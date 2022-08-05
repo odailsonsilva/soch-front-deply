@@ -2,19 +2,23 @@ import { extendTheme } from '@chakra-ui/react'
 
 export const themeChakra = extendTheme({
   colors: {
-    primary: '#0162e8',
-    backgroundGray: '#F7F7F7',
-    blue: {
-      300: '#0162e8'
-    },
+    primary: '#7626EA',
+    secondary: '#FF669D',
+    text: '#242020',
+    backgroundGray: '#F5F5F5',
     gray: {
-      300: '#6e6b7b'
+      100: '#EDEDED',
+      200: '#A0A0A0',
+      300: '#676767'
+    },
+    purple: {
+      100: '#DDC8FA'
     }
   },
   fonts: {
-    heading: "'Montserrat', sans-serif",
-    body: "'Montserrat', sans-serif",
+    heading: "'Spline Sans', sans-serif",
+    body: "'Spline Sans', sans-serif",
     fontSize: '0.875rem',
-    color: '#6e6b7b'
+    color: '#242020'
   }
 })
