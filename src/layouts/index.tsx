@@ -1,1 +1,0 @@
-export { LayoutAuthenticated } from './authenticated'
