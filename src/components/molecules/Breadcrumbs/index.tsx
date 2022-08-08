@@ -4,7 +4,8 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   Flex,
-  Text
+  Text,
+  useMediaQuery
 } from '@chakra-ui/react'
 import { FiChevronRight } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
@@ -18,29 +19,68 @@ export interface IListBreadcrumb {
 export interface IBreadcrumbsParams {
   list: IListBreadcrumb[]
 }
+const Breadcrumbs = ({ list }: IBreadcrumbsParams) => {
+  const [isMobile] = useMediaQuery('(max-width: 768px)')
 
-const Breadcrumbs = ({ list }: IBreadcrumbsParams) => (
-  <BreadcrumbChakra
-    separator={<FiChevronRight size={25} color="#D9D9D9" />}
-    color="gray.200"
-  >
-    {list.map((item, index) => (
-      <BreadcrumbItem
-        key={item.text}
-        isCurrentPage={index === list.length - 1}
-        marginTop="3px"
-      >
-        <Flex gap="8px">
-          {item?.icon && <Box>{item.icon}</Box>}
-          <BreadcrumbLink as={Link} to={item.link}>
-            <Text fontWeight={900} fontSize="1.25rem">
-              {item.text}
-            </Text>
-          </BreadcrumbLink>
-        </Flex>
-      </BreadcrumbItem>
-    ))}
-  </BreadcrumbChakra>
-)
+  return (
+    <BreadcrumbChakra
+      separator={
+        <FiChevronRight size={25} color={isMobile ? 'white' : '#D9D9D9'} />
+      }
+      color={isMobile ? 'white' : 'gray.200'}
+    >
+      {list.map((item, index) => {
+        if (!isMobile) {
+          return (
+            <BreadcrumbItem
+              key={item.text}
+              isCurrentPage={index === list.length - 1}
+              marginTop="3px"
+            >
+              <Flex gap="8px">
+                {item?.icon && <Box>{item.icon}</Box>}
+                <BreadcrumbLink as={Link} to={item.link}>
+                  <Text
+                    fontWeight={900}
+                    fontSize={isMobile ? '1rem !important' : '1.25rem'}
+                  >
+                    {item.text}
+                  </Text>
+                </BreadcrumbLink>
+              </Flex>
+            </BreadcrumbItem>
+          )
+        }
+
+        if (
+          isMobile &&
+          (index === list.length - 1 || index === list.length - 2)
+        ) {
+          return (
+            <BreadcrumbItem
+              key={item.text}
+              isCurrentPage={index === list.length - 1}
+              marginTop="3px"
+            >
+              <Flex gap="8px">
+                {item?.icon && <Box>{item.icon}</Box>}
+                <BreadcrumbLink as={Link} to={item.link}>
+                  <p
+                    style={{
+                      fontWeight: 900,
+                      fontSize: isMobile ? '1rem' : '1.25rem'
+                    }}
+                  >
+                    {item.text}
+                  </p>
+                </BreadcrumbLink>
+              </Flex>
+            </BreadcrumbItem>
+          )
+        }
+      })}
+    </BreadcrumbChakra>
+  )
+}
 
 export default Breadcrumbs

@@ -1,8 +1,10 @@
-import { Box, Flex, Heading } from '@chakra-ui/react'
+import { Box, Flex, Heading, useMediaQuery } from '@chakra-ui/react'
+import { FiUsers } from 'react-icons/fi'
+
+import { HeaderMobile, SibebarMobile } from './components'
 import { Breadcrumbs } from 'components/molecules'
 import { IListBreadcrumb } from 'components/molecules/Breadcrumbs'
 import SibebarDesktop from 'components/molecules/SibebarDesktop'
-import { FiUsers } from 'react-icons/fi'
 
 interface IAppTemplate {
   children: React.ReactNode
@@ -23,53 +25,78 @@ const list: IListBreadcrumb[] = [
   },
   {
     link: '/',
-    text: 'TSistema decimal'
+    text: 'Sistema decimal'
   }
 ]
 
-const AppTemplate = ({ children }: IAppTemplate) => (
-  <Flex width="100vw" minHeight="100vh" position="relative">
-    <SibebarDesktop />
+const AppTemplate = ({ children }: IAppTemplate) => {
+  const [isMobile] = useMediaQuery('(max-width: 768px)')
 
-    <Box
-      background="backgroundGray"
-      borderRadius="30px 0px 0px 30px"
-      position="absolute"
-      left="230px"
-      top="0"
-      bottom="0"
-      right="0"
+  return (
+    <Flex
+      width="100vw"
+      minHeight="100vh"
+      position="relative"
+      {...(isMobile && {
+        direction: 'column',
+        alignItems: 'stretch'
+      })}
     >
-      <Flex
-        pb="2"
-        direction="column"
-        borderBottom="1px solid #EBEBEB"
-        flex="1"
-        w="100%"
-        padding="32px"
-      >
-        <Heading fontWeight="400" fontSize="1rem" color="gray.200" mb="13px">
-          Olá, Léo
-        </Heading>
-
-        <Flex alignItems="center" gap="14px">
-          <FiUsers size={25} color="#A0A0A0" />
-
-          <Breadcrumbs list={list} />
-        </Flex>
-      </Flex>
+      {!isMobile && <SibebarDesktop />}
+      {isMobile && <HeaderMobile list={list} />}
 
       <Box
-        overflow="auto"
-        maxHeight="80vh"
-        paddingLeft="32px"
-        pb="32px"
-        pr="32px"
+        background="backgroundGray"
+        borderRadius={{ base: '0px', md: '0px', lg: '30px 0px 0px 30px' }}
+        position={{ base: 'relative', md: 'relative', lg: 'absolute' }}
+        left={{ base: '0px', md: '0px', lg: '230px' }}
+        top="0"
+        bottom="0"
+        right="0"
+        {...(isMobile && {
+          marginTop: '-20px',
+          borderRadius: '16px 16px 0px 0px'
+        })}
       >
-        {children}
+        {!isMobile && (
+          <Flex
+            pb="2"
+            direction="column"
+            borderBottom="1px solid #EBEBEB"
+            flex="1"
+            w="100%"
+            padding="32px"
+          >
+            <Heading
+              fontWeight="400"
+              fontSize="1rem"
+              color="gray.200"
+              mb="13px"
+            >
+              Olá, Léo
+            </Heading>
+
+            <Flex alignItems="center" gap="14px">
+              <FiUsers size={25} color="#A0A0A0" />
+
+              <Breadcrumbs list={list} />
+            </Flex>
+          </Flex>
+        )}
+
+        <Box
+          overflow="auto"
+          maxHeight={isMobile ? 'calc(100vh - 232px)' : 'calc(100vh - 130px)'}
+          p={{ base: '16px', md: '16px', lg: '32px' }}
+          pt="0"
+        >
+          {children}
+        </Box>
       </Box>
-    </Box>
-  </Flex>
-)
+
+      {isMobile && <SibebarMobile />}
+    </Flex>
+  )
+}
 
 export default AppTemplate

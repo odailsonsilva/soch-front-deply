@@ -7,7 +7,7 @@ import {
 } from '@chakra-ui/react'
 
 export interface ITabs {
-  tabs: string[]
+  tabs: React.ReactElement[]
   content: React.ReactElement[]
 }
 
@@ -21,9 +21,9 @@ const Tabs = ({ tabs, content }: ITabs) => (
     flexDirection="column"
   >
     <TabList>
-      {tabs.map((item) => (
+      {tabs.map((item, index) => (
         <Tab
-          key={item}
+          key={String(index)}
           fontWeight="500"
           color="gray.200"
           _selected={{

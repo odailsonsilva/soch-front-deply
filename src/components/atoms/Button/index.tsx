@@ -9,7 +9,7 @@ const Button = ({ children, ...rest }: IButtonParams) => (
     {...rest}
     borderRadius="16px"
     height="48px"
-    minWidth="360"
+    minWidth={{ base: '100%', md: '100%', lg: '360px' }}
     background="primary"
     color="#fff"
     transition="all 0.2 ease"
