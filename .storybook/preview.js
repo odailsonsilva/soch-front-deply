@@ -1,13 +1,13 @@
 import { ChakraProvider } from "@chakra-ui/react";
+import { MemoryRouter } from 'react-router-dom';
 import { themeChakra } from '../src/styles/themeChakra'
-import { AuthProvider } from '../src/hooks/useAuth'
 
 export const decorators = [
   (Story) => (
     <ChakraProvider theme={themeChakra}>
-      <AuthProvider>
+      <MemoryRouter>
         <Story />
-      </AuthProvider>
+      </MemoryRouter>
     </ChakraProvider>
   )
 ]
