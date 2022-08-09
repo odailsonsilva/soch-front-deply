@@ -86,7 +86,7 @@ const AppTemplate = ({ children }: IAppTemplate) => {
 
         <Box
           overflow="auto"
-          maxHeight={isMobile ? 'calc(100vh - 232px)' : 'calc(100vh - 130px)'}
+          maxHeight={isMobile ? 'calc(100vh - 162px)' : 'calc(100vh - 130px)'}
           p={{ base: '16px', md: '16px', lg: '32px' }}
           pt="0"
         >
