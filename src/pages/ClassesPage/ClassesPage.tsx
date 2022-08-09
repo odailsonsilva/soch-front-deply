@@ -6,6 +6,9 @@ import { AiOutlinePlayCircle } from 'react-icons/ai'
 import { IoPlayForwardOutline } from 'react-icons/io5'
 
 import CheckIcon from 'assets/images/icons/check-circle.svg'
+import FileIcon from 'assets/images/icons/file.svg'
+import SlideFile from 'assets/images/icons/monitor-analitics.svg'
+import UploadFile from 'assets/images/icons/upload-file.svg'
 
 import { Button, ButtonAction, Card, Tabs } from 'components'
 
@@ -30,7 +33,7 @@ const ClassesPage = () => {
             iconTypeRight="next"
           />
           <ButtonAction
-            iconLeft={<ReactSVG src={CheckIcon} />}
+            iconLeft={<ReactSVG src={FileIcon} />}
             label="Slides"
             iconTypeRight="upload"
           />
@@ -40,7 +43,7 @@ const ClassesPage = () => {
             iconTypeRight="upload"
           />
           <ButtonAction
-            iconLeft={<ReactSVG src={CheckIcon} />}
+            iconLeft={<ReactSVG src={UploadFile} />}
             label="Exercícios"
             iconTypeRight="upload"
           />
