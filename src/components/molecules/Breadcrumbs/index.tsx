@@ -43,6 +43,7 @@ const Breadcrumbs = ({ list }: IBreadcrumbsParams) => {
                   <Text
                     fontWeight={900}
                     fontSize={isMobile ? '1rem !important' : '1.25rem'}
+                    color={index === list.length - 1 ? '#676767' : 'gray.200'}
                   >
                     {item.text}
                   </Text>
@@ -68,7 +69,11 @@ const Breadcrumbs = ({ list }: IBreadcrumbsParams) => {
                   <p
                     style={{
                       fontWeight: 900,
-                      fontSize: isMobile ? '1rem' : '1.25rem'
+                      fontSize: isMobile ? '1rem' : '1.25rem',
+                      color:
+                        index === list.length - 1
+                          ? '#FFFFFF'
+                          : 'rgba(255, 255, 255, 0.6)'
                     }}
                   >
                     {item.text}

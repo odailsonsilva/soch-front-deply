@@ -1,9 +1,13 @@
 import { Flex, Text, useMediaQuery } from '@chakra-ui/react'
 import { ReactSVG } from 'react-svg'
 import { NavData } from 'constants/nav'
+import { useLocation } from 'react-router-dom'
 
 export const NavItem = ({ icon, iconLib, name, to }: NavData) => {
   const [isMobile] = useMediaQuery('(max-width: 768px)')
+  const { pathname } = useLocation()
+
+  const isCurrentPage = pathname === to
 
   return (
     <Flex
@@ -20,6 +24,10 @@ export const NavItem = ({ icon, iconLib, name, to }: NavData) => {
       _hover={{ background: 'secondary', cursor: 'pointer' }}
       {...(isMobile && {
         minWidth: '80px'
+      })}
+      {...(isCurrentPage && {
+        background: 'secondary',
+        cursor: 'pointer'
       })}
     >
       {icon && (
