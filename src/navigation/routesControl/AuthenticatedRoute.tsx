@@ -9,9 +9,5 @@ interface Props {
 export const AuthenticatedRoute = ({ children }: Props) => {
   const userAuthenticated = true
 
-  return userAuthenticated ? (
-    <AppTemplate>{children}</AppTemplate>
-  ) : (
-    <Navigate to="/login" replace />
-  )
+  return userAuthenticated ? <>{children}</> : <Navigate to="/login" replace />
 }

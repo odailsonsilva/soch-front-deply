@@ -11,7 +11,16 @@ export default {
 export const Default: Story = () => (
   <ButtonAction
     label="Exercícios"
-    iconLeft={<ReactSVG src={CheckIcon} />}
+    iconLeft={
+      <ReactSVG
+        src={CheckIcon}
+        color="red"
+        stroke="red"
+        fill="red"
+        wrap="div"
+      />
+    }
     iconTypeRight="next"
+    variantIcon="pink"
   />
 )

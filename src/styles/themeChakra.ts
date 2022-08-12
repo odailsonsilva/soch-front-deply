@@ -34,6 +34,15 @@ export const themeChakra = extendTheme({
       700: '#7626EA',
       800: '#7626EA',
       900: '#7626EA'
+    },
+    pinkSystem: {
+      100: 'rgba(255, 102, 157, 0.18)'
+    },
+    yellowSystem: {
+      100: 'rgba(253, 198, 2, 0.15)'
+    },
+    primarySystem: {
+      100: 'rgba(118, 38, 234, 0.15)'
     }
   },
   fonts: {

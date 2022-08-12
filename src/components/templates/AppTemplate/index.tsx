@@ -8,28 +8,17 @@ import SibebarDesktop from 'components/molecules/SibebarDesktop'
 
 interface IAppTemplate {
   children: React.ReactNode
+  headerContent: React.ReactNode
+  list?: IListBreadcrumb[]
+  headerContentMobile?: React.ReactNode
 }
 
-const list: IListBreadcrumb[] = [
-  {
-    link: '/',
-    text: 'Turma 1º A'
-  },
-  {
-    link: '/',
-    text: 'Aulas'
-  },
-  {
-    link: '/',
-    text: 'Operações Básicas'
-  },
-  {
-    link: '/',
-    text: 'Sistema decimal'
-  }
-]
-
-const AppTemplate = ({ children }: IAppTemplate) => {
+const AppTemplate = ({
+  children,
+  headerContent,
+  list,
+  headerContentMobile
+}: IAppTemplate) => {
   const [isMobile] = useMediaQuery('(max-width: 768px)')
 
   return (
@@ -43,7 +32,7 @@ const AppTemplate = ({ children }: IAppTemplate) => {
       })}
     >
       {!isMobile && <SibebarDesktop />}
-      {isMobile && <HeaderMobile list={list} />}
+      {isMobile && <HeaderMobile list={list} content={headerContentMobile} />}
 
       <Box
         background="backgroundGray"
@@ -67,20 +56,7 @@ const AppTemplate = ({ children }: IAppTemplate) => {
             w="100%"
             padding="32px"
           >
-            <Heading
-              fontWeight="400"
-              fontSize="1rem"
-              color="gray.200"
-              mb="13px"
-            >
-              Olá, Léo
-            </Heading>
-
-            <Flex alignItems="center" gap="14px">
-              <FiUsers size={25} color="#A0A0A0" />
-
-              <Breadcrumbs list={list} />
-            </Flex>
+            {headerContent}
           </Flex>
         )}
 

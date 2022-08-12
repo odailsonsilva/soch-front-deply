@@ -8,21 +8,33 @@ import {
 import { FiChevronRight } from 'react-icons/fi'
 
 import UploadFile from 'assets/images/icons/upload.svg'
-import { useCallback, useMemo } from 'react'
+import { useMemo } from 'react'
 import { ReactSVG } from 'react-svg'
+
+import { Button } from './styles'
 
 type IconTypeRight = 'upload' | 'next'
 
+const colorsVariant = {
+  pink: 'pinkSystem.100',
+  gray: 'gray.100',
+  yellow: 'yellowSystem.100',
+  violet: 'primarySystem.100'
+}
+
+export type IVariantIcon = 'pink' | 'gray' | 'yellow' | 'violet'
 export interface IButtonActionParams extends ButtonProps {
   iconLeft: React.ReactNode
   label: string
   iconTypeRight: IconTypeRight
+  variantIcon?: IVariantIcon
 }
 
 const ButtonAction = ({
   iconLeft,
   label,
   iconTypeRight,
+  variantIcon = 'gray',
   ...rest
 }: IButtonActionParams) => {
   const renderIcon = useMemo(() => {
@@ -35,8 +47,9 @@ const ButtonAction = ({
   }, [iconTypeRight])
 
   return (
-    <ButtonChakra
+    <Button
       {...rest}
+      variantIcon={variantIcon}
       w="100%"
       h="72px"
       display="flex"
@@ -65,7 +78,7 @@ const ButtonAction = ({
           h="40px"
           alignItems="center"
           justifyContent="center"
-          background="gray.100"
+          background={colorsVariant[variantIcon]}
           borderRadius="8px"
         >
           {iconLeft}
@@ -77,7 +90,7 @@ const ButtonAction = ({
       </HStack>
 
       {renderIcon}
-    </ButtonChakra>
+    </Button>
   )
 }
 

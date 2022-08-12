@@ -4,17 +4,19 @@ import { Breadcrumbs } from 'components/molecules'
 import { IListBreadcrumb } from 'components/molecules/Breadcrumbs'
 
 interface IHeaderMobileParams {
-  list: IListBreadcrumb[]
+  list?: IListBreadcrumb[]
+  content?: React.ReactNode
 }
 
-export const HeaderMobile = ({ list }: IHeaderMobileParams) => {
+export const HeaderMobile = ({ list, content }: IHeaderMobileParams) => {
   return (
     <Flex direction="column" bg="primary" h="130px" p="16px">
       <Flex direction="column" alignItems="center" justifyContent="center">
         <Logo />
 
         <Box mt="22px">
-          <Breadcrumbs list={list} />
+          {list && <Breadcrumbs list={list} />}
+          {content && content}
         </Box>
       </Flex>
     </Flex>
