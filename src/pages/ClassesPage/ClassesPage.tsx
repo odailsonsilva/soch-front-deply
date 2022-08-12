@@ -62,13 +62,7 @@ const ClassesPage = () => {
 
   return (
     <AppTemplate headerContent={hearderContent()} list={list}>
-      <Flex
-        minHeight="100vh"
-        direction="column"
-        w="100%"
-        alignItems="stretch"
-        height="100%"
-      >
+      <Flex minHeight="100vh" direction="column" w="100%" alignItems="stretch">
         <Flex
           mt="32px"
           w="100%"
