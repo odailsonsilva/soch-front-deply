@@ -1,6 +1,6 @@
 import { IButtonActionParams } from 'components/atoms/ButtonAction'
 import { ReactSVG } from 'react-svg'
-import CheckIcon from 'assets/images/icons/check-circle.svg'
+import CheckIcon from 'assets/images/icons/play-circle.svg'
 
 export const mock: IButtonActionParams[] = [
   {
