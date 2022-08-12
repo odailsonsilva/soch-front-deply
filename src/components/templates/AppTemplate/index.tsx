@@ -8,7 +8,7 @@ import SibebarDesktop from 'components/molecules/SibebarDesktop'
 
 interface IAppTemplate {
   children: React.ReactNode
-  headerContent: React.ReactNode
+  headerContent: React.ReactElement
   list?: IListBreadcrumb[]
   headerContentMobile?: React.ReactNode
 }
@@ -42,6 +42,7 @@ const AppTemplate = ({
         top="0"
         bottom="0"
         right="0"
+        flex={1}
         {...(isMobile && {
           marginTop: '-20px',
           borderRadius: '16px 16px 0px 0px'
@@ -62,7 +63,8 @@ const AppTemplate = ({
 
         <Box
           overflow="auto"
-          maxHeight={isMobile ? 'calc(100vh - 162px)' : 'calc(100vh - 130px)'}
+          maxHeight={isMobile ? 'calc(100vh - 162px)' : 'calc(100vh - 131px)'}
+          h="100%"
           p={{ base: '16px', md: '16px', lg: '32px' }}
           pt="0"
         >

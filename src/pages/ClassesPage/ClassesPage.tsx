@@ -28,15 +28,15 @@ const list: IListBreadcrumb[] = [
     text: 'Turma 1º A'
   },
   {
-    link: '/',
+    link: '/aulas',
     text: 'Aulas'
   },
   {
-    link: '/',
+    link: '/aulas/operacoes-basicas',
     text: 'Operações Básicas'
   },
   {
-    link: '/',
+    link: '/aulas/operacoes-basicas/sistema-decimal',
     text: 'Sistema decimal'
   }
 ]
@@ -61,8 +61,14 @@ const ClassesPage = () => {
   }
 
   return (
-    <AppTemplate headerContent={hearderContent} list={list}>
-      <Flex direction="column" w="100%" alignItems="stretch" height="100%">
+    <AppTemplate headerContent={hearderContent()} list={list}>
+      <Flex
+        minHeight="100vh"
+        direction="column"
+        w="100%"
+        alignItems="stretch"
+        height="100%"
+      >
         <Flex
           mt="32px"
           w="100%"
@@ -94,7 +100,8 @@ const ClassesPage = () => {
           </VStack>
 
           <Card
-            h={{ base: '252px', md: '252px', lg: '505px' }}
+            minHeight={{ base: '252px', md: '252px', lg: '505px' }}
+            height={{ base: '252px', md: '252px', lg: '70vh' }}
             w="100%"
             {...(isMobile && {
               order: '-1'
@@ -115,7 +122,7 @@ const ClassesPage = () => {
                 <Flex
                   flex="1"
                   bg="#ccc"
-                  h={{ base: '152px', md: '152px', lg: '400px' }}
+                  h={{ base: '152px', md: '152px', lg: '60vh' }}
                 >
                   <ReactPlayer
                     url="https://www.youtube.com/watch?v=N0uOa6Mkmrg"
@@ -143,6 +150,7 @@ const ClassesPage = () => {
 
         <Flex
           justifyContent={isMobile ? 'center' : 'flex-end'}
+          flex="1"
           w="100%"
           mt="32px"
         >

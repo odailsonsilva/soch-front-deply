@@ -7,7 +7,7 @@ export const NavItem = ({ icon, iconLib, name, to }: NavData) => {
   const [isMobile] = useMediaQuery('(max-width: 768px)')
   const { pathname } = useLocation()
 
-  const isCurrentPage = pathname === to
+  const isCurrentPage = to !== '/acompanhamento' && to !== '/profile'
 
   return (
     <Flex
