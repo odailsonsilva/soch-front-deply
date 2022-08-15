@@ -8,6 +8,7 @@
     "@chakra-ui/tabs": "^1.6.9",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@fontsource/spline-sans": "^4.5.11",
     "@hookform/resolvers": "^2.8.8",
     "@pathofdev/react-tag-input": "^1.0.7",
     "@testing-library/jest-dom": "^5.14.1",
