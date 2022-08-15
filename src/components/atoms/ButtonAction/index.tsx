@@ -57,14 +57,13 @@ const ButtonAction = ({
       w="100%"
       h="72px"
       display="flex"
-      shadow="none"
-      outline="none"
-      shadows={{ outline: 'none' }}
       borderRadius="16px"
       border="2px solid #EDEDED"
       alignItems="center"
       justifyContent="space-between"
       background="white"
+      shadow="none !important"
+      outline="none !important"
       filter="none"
       _hover={{
         background: 'none',

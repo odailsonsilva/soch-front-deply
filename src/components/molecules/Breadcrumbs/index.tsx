@@ -36,6 +36,8 @@ const Breadcrumbs = ({ list }: IBreadcrumbsParams) => {
               key={item.text}
               isCurrentPage={index === list.length - 1}
               marginTop="3px"
+              shadow="none !important"
+              outline="none !important"
             >
               <Flex gap="8px">
                 {item?.icon && <Box>{item.icon}</Box>}
@@ -62,10 +64,17 @@ const Breadcrumbs = ({ list }: IBreadcrumbsParams) => {
               key={item.text}
               isCurrentPage={index === list.length - 1}
               marginTop="3px"
+              shadow="none !important"
+              outline="none !important"
             >
               <Flex gap="8px">
                 {item?.icon && <Box>{item.icon}</Box>}
-                <BreadcrumbLink as={Link} to={item.link}>
+                <BreadcrumbLink
+                  as={Link}
+                  to={item.link}
+                  shadow="none !important"
+                  outline="none !important"
+                >
                   <p
                     style={{
                       fontWeight: 900,
