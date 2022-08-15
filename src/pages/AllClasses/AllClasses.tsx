@@ -35,6 +35,7 @@ const AllClasses = () => {
     <AppTemplate
       headerContent={hearderContent()}
       headerContentMobile={hearderContentMobile()}
+      variant="white"
     >
       <Flex
         direction={isMobile ? 'column' : 'row'}

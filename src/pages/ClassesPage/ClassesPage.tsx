@@ -1,5 +1,12 @@
 /* eslint-disable react/jsx-key */
-import { Flex, Heading, Text, useMediaQuery, VStack } from '@chakra-ui/react'
+import {
+  Box,
+  Flex,
+  Heading,
+  Text,
+  useMediaQuery,
+  VStack
+} from '@chakra-ui/react'
 import { FiChevronRight, FiUsers } from 'react-icons/fi'
 import ReactPlayer from 'react-player'
 import { AiOutlinePlayCircle } from 'react-icons/ai'
@@ -62,7 +69,12 @@ const ClassesPage = () => {
 
   return (
     <AppTemplate headerContent={hearderContent()} list={list}>
-      <Flex direction="column" w="100%" alignItems="stretch">
+      <Flex
+        direction="column"
+        w="100%"
+        alignItems="stretch"
+        height={isMobile ? '252px' : '74vh'}
+      >
         <Flex
           mt="32px"
           w="100%"
@@ -94,8 +106,8 @@ const ClassesPage = () => {
           </VStack>
 
           <Card
-            minHeight={{ base: '252px', md: '252px', lg: '58vh' }}
-            height={{ base: '252px', md: '252px', lg: '58vh' }}
+            // minHeight={{ base: '252px', md: '252px', lg: '65vh' }}
+            h={isMobile ? '252px' : '67vh'}
             w="100%"
             {...(isMobile && {
               order: '-1'
@@ -113,30 +125,32 @@ const ClassesPage = () => {
                 </Flex>
               ]}
               content={[
-                <Flex
-                  flex="1"
-                  bg="#ccc"
-                  h={{ base: '152px', md: '152px', lg: '46vh' }}
+                <Box
+                  h={isMobile ? '152px' : '56vh'}
+                  borderRadius="4px"
+                  mt="10px"
                 >
                   <ReactPlayer
                     url="https://www.youtube.com/watch?v=N0uOa6Mkmrg"
                     width="100%"
                     height="100%"
                     controls
+                    style={{ borderRadius: '4px' }}
                   />
-                </Flex>,
-                <Flex
-                  flex="1"
-                  bg="#ccc"
-                  h={{ base: '152px', md: '152px', lg: '46vh' }}
+                </Box>,
+                <Box
+                  h={isMobile ? '152px' : '56vh'}
+                  borderRadius="4px"
+                  mt="10px"
                 >
                   <ReactPlayer
                     url="https://www.youtube.com/watch?v=_Ur59IV_2Ik"
                     width="100%"
                     height="100%"
                     controls
+                    style={{ borderRadius: '4px' }}
                   />
-                </Flex>
+                </Box>
               ]}
             />
           </Card>

@@ -1,8 +1,6 @@
-import { Box, Flex, Heading, useMediaQuery } from '@chakra-ui/react'
-import { FiUsers } from 'react-icons/fi'
+import { Box, Flex, useMediaQuery } from '@chakra-ui/react'
 
 import { HeaderMobile, SibebarMobile } from './components'
-import { Breadcrumbs } from 'components/molecules'
 import { IListBreadcrumb } from 'components/molecules/Breadcrumbs'
 import SibebarDesktop from 'components/molecules/SibebarDesktop'
 
@@ -11,13 +9,15 @@ interface IAppTemplate {
   headerContent: React.ReactElement
   list?: IListBreadcrumb[]
   headerContentMobile?: React.ReactNode
+  variant?: 'default' | 'white'
 }
 
 const AppTemplate = ({
   children,
   headerContent,
   list,
-  headerContentMobile
+  headerContentMobile,
+  variant = 'default'
 }: IAppTemplate) => {
   const [isMobile] = useMediaQuery('(max-width: 768px)')
 
@@ -35,7 +35,7 @@ const AppTemplate = ({
       {isMobile && <HeaderMobile list={list} content={headerContentMobile} />}
 
       <Box
-        background="backgroundGray"
+        background={'#FBFBFB'}
         borderRadius={{ base: '0px', md: '0px', lg: '30px 0px 0px 30px' }}
         position={{ base: 'relative', md: 'relative', lg: 'absolute' }}
         left={{ base: '0px', md: '0px', lg: '260px' }}
@@ -66,7 +66,7 @@ const AppTemplate = ({
           maxHeight={isMobile ? 'calc(100vh - 150px)' : 'calc(100vh - 131px)'}
           h="100%"
           p={{ base: '16px', md: '16px', lg: '32px' }}
-          pt="0"
+          pt="0px !important"
           {...(isMobile && {
             pb: '30px'
           })}

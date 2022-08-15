@@ -3,7 +3,8 @@ import {
   TabList,
   TabPanels,
   Tab,
-  TabPanel
+  TabPanel,
+  Flex
 } from '@chakra-ui/react'
 
 export interface ITabs {
@@ -30,16 +31,16 @@ const Tabs = ({ tabs, content }: ITabs) => (
             shadow: 'red',
             color: 'primary',
             borderColor: 'primary',
-            outline: 'primary'
+            outline: 'none'
           }}
         >
           {item}
         </Tab>
       ))}
     </TabList>
-    <TabPanels flex="1">
+    <TabPanels>
       {content.map((item, index) => (
-        <TabPanel key={String(index)} h="100%">
+        <TabPanel key={String(index)} p="0 !important" m="0 !important">
           {item}
         </TabPanel>
       ))}

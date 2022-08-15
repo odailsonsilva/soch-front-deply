@@ -32,7 +32,6 @@ export const DropdownClasses = () => {
         borderRadius="16px"
         borderWidth="2px"
         borderColor={isMobile ? 'rgba(255, 255, 255, 0.25)' : '#DDC8FA'}
-        _expanded={{ bg: 'blue.400' }}
         _focus={{ boxShadow: 'outline' }}
       >
         <Flex justifyContent="space-between" alignItems="center">
@@ -58,11 +57,16 @@ export const DropdownClasses = () => {
         maxHeight="70vh"
         overflow="auto"
         left="0"
+        _hover={{ background: '#fbfbfb' }}
+        _selected={{ background: '#fbfbfb' }}
+        _active={{ background: '#fbfbfb' }}
       >
         {mock.map((item) => (
           <MenuItem
             key={item.label}
-            _hover={{ background: 'none' }}
+            _hover={{ background: '#fbfbfb' }}
+            _selected={{ background: '#fbfbfb' }}
+            _active={{ background: '#fbfbfb' }}
             onClick={() => setSelectedClasse(item.value!)}
           >
             <ButtonAction {...item} />
