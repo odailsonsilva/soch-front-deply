@@ -46,8 +46,8 @@ export const themeChakra = extendTheme({
     }
   },
   fonts: {
-    heading: "'SplineSans-Regular', sans-serif",
-    body: "'SplineSans-Regular', sans-serif",
+    heading: "'Spline Sans', sans-serif",
+    body: "'Spline Sans', sans-serif",
     fontSize: '0.875rem',
     color: '#242020'
   },
