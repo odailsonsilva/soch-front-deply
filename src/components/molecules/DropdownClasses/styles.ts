@@ -1,4 +1,18 @@
-import styled from 'styled-components'
-import { Button as ChakraButton } from '@chakra-ui/react'
+import styled, { css } from 'styled-components'
 
-export const Button = styled(ChakraButton)``
+type IconData = {
+  isMobile: boolean
+}
+
+export const Icon = styled.div<IconData>`
+  ${({ isMobile }) => css`
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    svg path {
+      stroke: ${isMobile ? '#FFF' : '#7626ea'};
+    }
+  `}
+`

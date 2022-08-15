@@ -65,14 +65,15 @@ const ButtonAction = ({
       alignItems="center"
       justifyContent="space-between"
       background="white"
+      filter="none"
       _hover={{
-        background: 'white'
+        background: 'none',
+        filter: 'none'
       }}
-      _actived={{
-        background: 'white'
-      }}
-      _selected={{
-        background: 'white'
+      _active={{
+        bg: '#fff',
+        borderColor: '#bec3c9',
+        outline: 'none'
       }}
     >
       <HStack spacing="20px">

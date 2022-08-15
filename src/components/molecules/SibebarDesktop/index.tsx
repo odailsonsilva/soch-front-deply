@@ -8,7 +8,7 @@ import { NavItem } from './components/NavItem'
 const SibebarDesktop = () => (
   <Flex
     flexDirection="column"
-    width="260px"
+    width="290px"
     h="100vh"
     background="primary"
     padding="40px 16px"
@@ -17,7 +17,7 @@ const SibebarDesktop = () => (
       flexDirection="column"
       alignItems="center"
       height="100vh"
-      width="210px"
+      width="230px"
     >
       <Box>
         <Logo />

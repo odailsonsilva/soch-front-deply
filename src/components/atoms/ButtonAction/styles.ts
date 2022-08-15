@@ -14,5 +14,9 @@ export const Button = styled<any>(ChakraButton)`
     svg path {
       stroke: ${colorsVariant[variantIcon]};
     }
+
+    &:active {
+      background: 'red';
+    }
   `}
 `

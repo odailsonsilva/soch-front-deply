@@ -3,18 +3,19 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
   Text,
   Flex,
-  useMediaQuery
+  useMediaQuery,
+  HStack
 } from '@chakra-ui/react'
 import { ButtonAction } from 'components/atoms'
 import { useSelectedClasse } from 'context/use-selected-classe'
 import { FiChevronDown } from 'react-icons/fi'
+import MultiUser from 'assets/images/icons/multi-user.svg'
 import { mock } from './mock'
+import { ReactSVG } from 'react-svg'
+
+import * as S from './styles'
 
 export const DropdownClasses = () => {
   const { selectedClasse, setSelectedClasse } = useSelectedClasse()
@@ -35,7 +36,15 @@ export const DropdownClasses = () => {
         _focus={{ boxShadow: 'outline' }}
       >
         <Flex justifyContent="space-between" alignItems="center">
-          <Text color={isMobile ? '#fff' : 'primary'}>{selectedClasse}</Text>
+          <HStack>
+            <S.Icon isMobile={isMobile}>
+              <ReactSVG src={MultiUser} />
+            </S.Icon>
+
+            <Text fontWeight="700" color={isMobile ? '#fff' : 'primary'}>
+              {selectedClasse}
+            </Text>
+          </HStack>
           <FiChevronDown size={22} color={isMobile ? '#fff' : '#7626EA'} />
         </Flex>
       </MenuButton>

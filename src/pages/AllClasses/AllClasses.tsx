@@ -41,7 +41,6 @@ const AllClasses = () => {
         w="100%"
         alignItems="stretch"
         gap="33px"
-        minHeight="100vh"
         p="20px 0px"
       >
         {mock.map((item) => (

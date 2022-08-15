@@ -62,7 +62,7 @@ const ClassesPage = () => {
 
   return (
     <AppTemplate headerContent={hearderContent()} list={list}>
-      <Flex minHeight="100vh" direction="column" w="100%" alignItems="stretch">
+      <Flex direction="column" w="100%" alignItems="stretch">
         <Flex
           mt="32px"
           w="100%"
@@ -94,8 +94,8 @@ const ClassesPage = () => {
           </VStack>
 
           <Card
-            minHeight={{ base: '252px', md: '252px', lg: '505px' }}
-            height={{ base: '252px', md: '252px', lg: '70vh' }}
+            minHeight={{ base: '252px', md: '252px', lg: '58vh' }}
+            height={{ base: '252px', md: '252px', lg: '58vh' }}
             w="100%"
             {...(isMobile && {
               order: '-1'
@@ -116,7 +116,7 @@ const ClassesPage = () => {
                 <Flex
                   flex="1"
                   bg="#ccc"
-                  h={{ base: '152px', md: '152px', lg: '60vh' }}
+                  h={{ base: '152px', md: '152px', lg: '46vh' }}
                 >
                   <ReactPlayer
                     url="https://www.youtube.com/watch?v=N0uOa6Mkmrg"
@@ -128,7 +128,7 @@ const ClassesPage = () => {
                 <Flex
                   flex="1"
                   bg="#ccc"
-                  h={{ base: '152px', md: '152px', lg: '400px' }}
+                  h={{ base: '152px', md: '152px', lg: '46vh' }}
                 >
                   <ReactPlayer
                     url="https://www.youtube.com/watch?v=_Ur59IV_2Ik"
