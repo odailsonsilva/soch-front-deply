@@ -63,10 +63,13 @@ const AppTemplate = ({
 
         <Box
           overflow="auto"
-          maxHeight={isMobile ? 'calc(100vh - 182px)' : 'calc(100vh - 131px)'}
+          maxHeight={isMobile ? 'calc(100vh - 150px)' : 'calc(100vh - 131px)'}
           h="100%"
           p={{ base: '16px', md: '16px', lg: '32px' }}
           pt="0"
+          {...(isMobile && {
+            pb: '30px'
+          })}
         >
           {children}
         </Box>
