@@ -20,7 +20,7 @@ const list: IListBreadcrumb[] = [
     text: 'Turma 1º A'
   },
   {
-    link: '/',
+    link: '/aulas',
     text: 'Aulas'
   }
 ]

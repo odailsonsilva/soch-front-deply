@@ -10,7 +10,7 @@ interface IHeaderMobileParams {
 
 export const HeaderMobile = ({ list, content }: IHeaderMobileParams) => {
   return (
-    <Flex direction="column" bg="primary" h="130px" p="16px">
+    <Flex direction="column" bg="primary" h="150px" p="16px">
       <Flex direction="column" alignItems="center" justifyContent="center">
         <Logo />
 

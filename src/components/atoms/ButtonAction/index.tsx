@@ -3,7 +3,8 @@ import {
   ButtonProps,
   Flex,
   HStack,
-  Text
+  Text,
+  VStack
 } from '@chakra-ui/react'
 import { FiChevronRight } from 'react-icons/fi'
 
@@ -27,6 +28,8 @@ export interface IButtonActionParams extends ButtonProps {
   iconLeft: React.ReactNode
   label: string
   iconTypeRight: IconTypeRight
+  description?: string
+  value?: string
   variantIcon?: IVariantIcon
 }
 
@@ -35,6 +38,7 @@ const ButtonAction = ({
   label,
   iconTypeRight,
   variantIcon = 'gray',
+  description,
   ...rest
 }: IButtonActionParams) => {
   const renderIcon = useMemo(() => {
@@ -71,7 +75,7 @@ const ButtonAction = ({
         background: 'white'
       }}
     >
-      <HStack>
+      <HStack spacing="20px">
         <Flex
           p="8px"
           w="40px"
@@ -84,9 +88,16 @@ const ButtonAction = ({
           {iconLeft}
         </Flex>
 
-        <Text color="text" fontWeight="500">
-          {label}
-        </Text>
+        <VStack justifyContent="flex-start" alignItems="flex-start" ml="24px">
+          {description && (
+            <Text color="#A0A0A0" fontSize="14px">
+              {description}
+            </Text>
+          )}
+          <Text color="text" fontWeight="500">
+            {label}
+          </Text>
+        </VStack>
       </HStack>
 
       {renderIcon}

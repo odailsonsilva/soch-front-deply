@@ -4,13 +4,16 @@ import { BrowserRouter } from 'react-router-dom'
 
 import { Routes } from 'navigation/routes'
 import { Suspense } from 'react'
+import { SelectedClasseProvider } from 'context/use-selected-classe'
 
 function App() {
   return (
     <Suspense fallback={() => 'loading...'}>
       <BrowserRouter>
         <ChakraProvider theme={themeChakra}>
-          <Routes />
+          <SelectedClasseProvider>
+            <Routes />
+          </SelectedClasseProvider>
         </ChakraProvider>
       </BrowserRouter>
     </Suspense>
