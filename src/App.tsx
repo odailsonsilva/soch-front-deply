@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { Routes } from 'navigation/routes'
 import { Suspense } from 'react'
 import { SelectedClasseProvider } from 'context/use-selected-classe'
+import '@fontsource/spline-sans'
 
 function App() {
   return (
