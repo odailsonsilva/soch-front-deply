@@ -9,6 +9,7 @@ import { Suspense } from 'react'
 import { SelectedClasseProvider } from 'context/use-selected-classe'
 import '@fontsource/spline-sans'
 import { ThemeProvider } from 'styled-components'
+import Fonts from './styles/fonts'
 
 const AppContainer = styled.div`
   font-family: 'Spline Sans', sans-serif;
@@ -19,6 +20,7 @@ function App() {
     <Suspense fallback={() => 'loading...'}>
       <BrowserRouter>
         <ChakraProvider theme={themeChakra}>
+          <Fonts />
           <ThemeProvider theme={themeStyledComponents}>
             <AppContainer>
               <SelectedClasseProvider>
