@@ -23,6 +23,7 @@ import {
   Button,
   ButtonAction,
   Card,
+  Icon,
   Tabs
 } from 'components'
 
@@ -59,7 +60,7 @@ const ClassesPage = () => {
         </Heading>
 
         <Flex alignItems="center" gap="14px">
-          <FiUsers size={25} color="#A0A0A0" />
+          <Icon icon="MultiUser" size={25} color="#A0A0A0" />
 
           <Breadcrumbs list={list} />
         </Flex>

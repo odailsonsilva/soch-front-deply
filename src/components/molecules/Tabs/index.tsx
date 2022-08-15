@@ -27,8 +27,10 @@ const Tabs = ({ tabs, content }: ITabs) => (
           key={String(index)}
           fontWeight="500"
           color="gray.200"
+          shadow="none !important"
+          outline="none !important"
           _selected={{
-            shadow: 'red',
+            shadow: 'none',
             color: 'primary',
             borderColor: 'primary',
             outline: 'none'

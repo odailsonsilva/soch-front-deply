@@ -8,7 +8,7 @@ import {
   VStack
 } from '@chakra-ui/react'
 
-import { AppTemplate, Breadcrumbs, ButtonAction } from 'components'
+import { AppTemplate, Breadcrumbs, ButtonAction, Icon } from 'components'
 import { IListBreadcrumb } from 'components/molecules/Breadcrumbs'
 import { FiUsers } from 'react-icons/fi'
 import { useNavigate } from 'react-router-dom'
@@ -37,7 +37,7 @@ const Lessons = () => {
         </Heading>
 
         <Flex alignItems="center" gap="14px">
-          <FiUsers size={25} color="#A0A0A0" />
+          <Icon icon="MultiUser" size={25} color="#A0A0A0" />
 
           <Breadcrumbs list={list} />
         </Flex>
