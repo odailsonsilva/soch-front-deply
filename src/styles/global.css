@@ -1,34 +1,34 @@
 @font-face {
   font-family: "Spline Sans";
-  src: url("../assets/fonts/SplineSans-Light.otf") format("openType");
+  src: url("../assets/fonts/SplineSans-Light.woff2") format("woff2");
   font-style: normal;
   font-weight: 300;
 }
 
 @font-face {
   font-family: "Spline Sans";
-  src: url("../assets/fonts/SplineSans-Regular.otf") format("openType");
+  src: url("../assets/fonts/SplineSans-Regular.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
   font-family: "Spline Sans";
-  src: url("../assets/fonts/SplineSans-Medium.otf") format("openType");
+  src: url("../assets/fonts/SplineSans-Medium.woff2") format("woff2");
   font-style: normal;
   font-weight: 500;
 }
 
 @font-face {
   font-family: "Spline Sans";
-  src: url("../assets/fonts/SplineSans-SemiBold.otf") format("openType");
+  src: url("../assets/fonts/SplineSans-SemiBold.woff2") format("woff2");
   font-style: normal;
   font-weight: 600;
 }
 
 @font-face {
   font-family: "Spline Sans";
-  src: url("../assets/fonts/SplineSans-Bold.otf") format("openType");
+  src: url("../assets/fonts/SplineSans-Bold.woff2") format("woff2");
   font-style: normal;
   font-weight: 900;
 }
