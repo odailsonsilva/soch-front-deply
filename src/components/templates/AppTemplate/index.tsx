@@ -54,13 +54,10 @@ const AppTemplate = ({
         top="0"
         bottom="0"
         right="0"
-        overflow="auto"
         flex={1}
         {...(isMobile && {
           marginTop: '-20px',
-          borderRadius: '16px 16px 0px 0px',
-          paddingTop: '152px',
-          paddingBottom: '100px !important'
+          borderRadius: '16px 16px 0px 0px'
         })}
       >
         {!isMobile && (
@@ -77,13 +74,15 @@ const AppTemplate = ({
         )}
 
         <Box
-          maxHeight={isMobile ? '100vh' : 'calc(100vh - 131px)'}
+          overflow="auto"
+          maxHeight={isMobile ? '100%' : 'calc(100vh - 131px)'}
           h="100%"
           p={{ base: '16px', md: '16px', lg: '32px' }}
           pt="0px !important"
-          // {...(isMobile && {
-
-          // })}
+          {...(isMobile && {
+            paddingTop: '152px',
+            paddingBottom: '72px'
+          })}
         >
           {children}
         </Box>
