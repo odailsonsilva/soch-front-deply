@@ -31,7 +31,20 @@ const AppTemplate = ({
       })}
     >
       {!isMobile && <SibebarDesktop />}
-      {isMobile && <HeaderMobile list={list} content={headerContentMobile} />}
+      {isMobile && (
+        <>
+          <div
+            style={{
+              height: '132px',
+              position: 'fixed',
+              background: 'red',
+              zIndex: 50
+            }}
+          >
+            <HeaderMobile list={list} content={headerContentMobile} />
+          </div>
+        </>
+      )}
 
       <Box
         background={'#FBFBFB'}
@@ -62,11 +75,12 @@ const AppTemplate = ({
 
         <Box
           overflow="auto"
-          maxHeight={isMobile ? 'calc(100vh - 150px)' : 'calc(100vh - 131px)'}
+          maxHeight={isMobile ? '100vh' : 'calc(100vh - 131px)'}
           h="100%"
           p={{ base: '16px', md: '16px', lg: '32px' }}
           pt="0px !important"
           {...(isMobile && {
+            paddingTop: '152px',
             paddingBottom: '52px'
           })}
         >
