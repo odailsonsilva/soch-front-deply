@@ -55,7 +55,7 @@ const ButtonAction = ({
       {...rest}
       variantIcon={variantIcon}
       w="100%"
-      h="72px"
+      minH="72px"
       display="flex"
       borderRadius="16px"
       border="2px solid #EDEDED"
@@ -94,7 +94,7 @@ const ButtonAction = ({
               {description}
             </Text>
           )}
-          <Text color="text" fontWeight="500">
+          <Text color="text" fontWeight="500" isTruncated>
             {label}
           </Text>
         </VStack>
