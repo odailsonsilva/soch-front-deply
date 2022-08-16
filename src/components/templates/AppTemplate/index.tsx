@@ -37,11 +37,26 @@ const AppTemplate = ({
             style={{
               height: '132px',
               position: 'fixed',
-              background: 'red',
               zIndex: 50
             }}
           >
             <HeaderMobile list={list} content={headerContentMobile} />
+
+            <div
+              style={{
+                background: '#FBFBFB',
+                position: 'fixed',
+                top: '125px',
+                left: '0',
+                right: '0',
+                borderRadius: '16px 16px 0px 0px',
+                content: '',
+                display: 'block',
+                height: '20px',
+                width: '100vw',
+                zIndex: 51
+              }}
+            ></div>
           </div>
         </>
       )}
@@ -56,7 +71,7 @@ const AppTemplate = ({
         right="0"
         flex={1}
         {...(isMobile && {
-          marginTop: '-20px',
+          marginTop: '-30px',
           borderRadius: '16px 16px 0px 0px'
         })}
       >
@@ -75,13 +90,13 @@ const AppTemplate = ({
 
         <Box
           overflow="auto"
-          maxHeight={isMobile ? '100%' : 'calc(100vh - 131px)'}
+          maxHeight={isMobile ? 'calc(100vh - 152px)' : 'calc(100vh - 131px)'}
           h="100%"
           p={{ base: '16px', md: '16px', lg: '32px' }}
           pt="0px !important"
           {...(isMobile && {
-            paddingTop: '152px',
-            paddingBottom: '72px'
+            marginTop: '162px',
+            paddingBottom: '42px'
           })}
         >
           {children}

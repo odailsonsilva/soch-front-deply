@@ -10,7 +10,7 @@ export const SibebarMobile = () => {
     <Flex
       alignItems="center"
       justifyContent="space-between"
-      bg="primary"
+      bg="linear-gradient(107.29deg, #7626EA 38.13%, #C924A6 143.12%);"
       h="52px"
       w="100%"
       p="16px"
