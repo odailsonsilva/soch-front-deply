@@ -90,13 +90,12 @@ const AppTemplate = ({
 
         <Box
           overflow="auto"
-          maxHeight={isMobile ? 'calc(100vh - 152px)' : 'calc(100vh - 131px)'}
+          maxHeight={isMobile ? 'calc(100vh - 186px)' : 'calc(100vh - 131px)'}
           h="100%"
           p={{ base: '16px', md: '16px', lg: '32px' }}
           pt="0px !important"
           {...(isMobile && {
-            marginTop: '162px',
-            paddingBottom: '100px'
+            marginTop: '162px'
           })}
         >
           {children}
