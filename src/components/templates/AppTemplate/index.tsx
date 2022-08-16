@@ -72,7 +72,9 @@ const AppTemplate = ({
         flex={1}
         {...(isMobile && {
           marginTop: '-30px',
-          borderRadius: '16px 16px 0px 0px'
+          borderRadius: '16px 16px 0px 0px',
+          overflow: 'auto',
+          height: 'calc(100vh - 186px)'
         })}
       >
         {!isMobile && (
@@ -89,13 +91,13 @@ const AppTemplate = ({
         )}
 
         <Box
-          overflow="auto"
-          maxHeight={isMobile ? 'calc(100vh - 186px)' : 'calc(100vh - 131px)'}
+          maxHeight={isMobile ? '100%' : 'calc(100vh - 131px)'}
           h="100%"
           p={{ base: '16px', md: '16px', lg: '32px' }}
           pt="0px !important"
           {...(isMobile && {
-            marginTop: '162px'
+            marginTop: '162px',
+            marginBottom: '52px'
           })}
         >
           {children}
