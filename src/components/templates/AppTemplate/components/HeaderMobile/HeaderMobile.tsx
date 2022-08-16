@@ -14,7 +14,7 @@ export const HeaderMobile = ({ list, content }: IHeaderMobileParams) => {
       <Flex direction="column" alignItems="center" justifyContent="center">
         <Logo />
 
-        <Box mt="22px">
+        <Box mt="22px" w="100" overflowX="auto">
           {list && <Breadcrumbs list={list} />}
           {content && content}
         </Box>

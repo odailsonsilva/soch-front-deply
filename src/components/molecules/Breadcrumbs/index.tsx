@@ -44,7 +44,7 @@ const Breadcrumbs = ({ list }: IBreadcrumbsParams) => {
                 <BreadcrumbLink as={Link} to={item.link}>
                   <Text
                     fontWeight={900}
-                    fontSize={isMobile ? '1rem !important' : '1.25rem'}
+                    fontSize={isMobile ? '0.8rem !important' : '1.25rem'}
                     color={index === list.length - 1 ? '#676767' : 'gray.200'}
                   >
                     {item.text}

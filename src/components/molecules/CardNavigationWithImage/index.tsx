@@ -20,6 +20,7 @@ type IBackgroundImage = 'yellow' | 'violet'
 
 export interface ICardNavitationWithImage extends BoxProps {
   src: string
+  imgMobile?: string
   name: string
   to: string
   background: IBackgroundImage
@@ -29,7 +30,8 @@ export const CardNavigationWithImage = ({
   src,
   name,
   to,
-  background
+  background,
+  imgMobile = ''
 }: ICardNavitationWithImage) => {
   const [isMobile] = useMediaQuery('(max-width: 768px)')
 
@@ -45,12 +47,13 @@ export const CardNavigationWithImage = ({
       >
         <Box
           background={colorsVariant[background]}
-          borderRadius="16px 16px 0px 0px"
+          borderRadius="14px 14px 0px 0px"
           w="100%"
           height={isMobile ? '66px' : '100%'}
+          overflow="hidden"
         >
           <Image
-            src={src}
+            src={isMobile && !!imgMobile ? imgMobile : src}
             alt={name}
             objectFit="cover"
             {...(isMobile && {

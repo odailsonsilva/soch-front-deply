@@ -53,7 +53,7 @@ const Lessons = () => {
           lg: 'repeat(2, 1fr)',
           xl: 'repeat(3, 1fr)'
         }}
-        gap="32px"
+        gap={isMobile ? '16px' : '32px'}
       >
         {mock.map((item) => (
           <ButtonAction

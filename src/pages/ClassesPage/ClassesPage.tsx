@@ -70,14 +70,14 @@ const ClassesPage = () => {
         direction="column"
         w="100%"
         alignItems="stretch"
-        height={isMobile ? '252px' : '74vh'}
+        height={isMobile ? '100%' : '74vh'}
       >
         <Flex
           mt="32px"
           w="100%"
           direction={{ base: 'column', md: 'column', lg: 'row' }}
           justifyContent="space-between"
-          gap="30px"
+          gap={isMobile ? '24px' : '30px'}
         >
           <VStack maxWidth={{ base: '100%', md: '100%', lg: '362px' }} w="100%">
             <ButtonAction
