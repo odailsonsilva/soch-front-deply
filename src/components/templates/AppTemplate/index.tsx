@@ -26,6 +26,7 @@ const AppTemplate = ({
       minHeight="100vh"
       position="relative"
       {...(isMobile && {
+        overflow: 'hidden',
         direction: 'column',
         alignItems: 'stretch'
       })}
@@ -46,7 +47,7 @@ const AppTemplate = ({
               style={{
                 background: '#FBFBFB',
                 position: 'fixed',
-                top: '125px',
+                top: '130px',
                 left: '0',
                 right: '0',
                 borderRadius: '16px 16px 0px 0px',
@@ -71,10 +72,8 @@ const AppTemplate = ({
         right="0"
         flex={1}
         {...(isMobile && {
-          marginTop: '-30px',
-          borderRadius: '16px 16px 0px 0px',
-          height: '100vh',
-          overflow: 'auto'
+          marginTop: '-20px',
+          borderRadius: '16px 16px 0px 0px'
         })}
       >
         {!isMobile && (
@@ -91,13 +90,14 @@ const AppTemplate = ({
         )}
 
         <Box
-          maxHeight={isMobile ? '100%' : 'calc(100vh - 131px)'}
+          overflow="auto"
+          maxHeight={isMobile ? 'calc(100vh - 182px)' : 'calc(100vh - 131px)'}
           h="100%"
           p={{ base: '16px', md: '16px', lg: '32px' }}
           pt="0px !important"
           {...(isMobile && {
-            marginTop: '162px',
-            paddingBottom: '62px'
+            marginTop: '152px',
+            paddingBottom: '50px'
           })}
         >
           {children}
