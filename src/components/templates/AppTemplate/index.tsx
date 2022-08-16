@@ -73,8 +73,8 @@ const AppTemplate = ({
         {...(isMobile && {
           marginTop: '-30px',
           borderRadius: '16px 16px 0px 0px',
-          overflow: 'auto',
-          height: 'calc(100vh - 186px)'
+          height: '100vh',
+          overflow: 'auto'
         })}
       >
         {!isMobile && (
@@ -97,7 +97,7 @@ const AppTemplate = ({
           pt="0px !important"
           {...(isMobile && {
             marginTop: '162px',
-            marginBottom: '52px'
+            paddingBottom: '62px'
           })}
         >
           {children}
