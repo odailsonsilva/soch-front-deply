@@ -14,7 +14,7 @@ export const SibebarMobile = () => {
       h="52px"
       w="100%"
       p="16px"
-      position="sticky"
+      position="fixed"
       bottom="0"
       left="0"
       right="0"

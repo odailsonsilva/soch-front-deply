@@ -16,8 +16,7 @@ const AppTemplate = ({
   children,
   headerContent,
   list,
-  headerContentMobile,
-  variant = 'default'
+  headerContentMobile
 }: IAppTemplate) => {
   const [isMobile] = useMediaQuery('(max-width: 768px)')
 
@@ -68,7 +67,7 @@ const AppTemplate = ({
           p={{ base: '16px', md: '16px', lg: '32px' }}
           pt="0px !important"
           {...(isMobile && {
-            pb: '30px'
+            paddingBottom: '52px'
           })}
         >
           {children}
