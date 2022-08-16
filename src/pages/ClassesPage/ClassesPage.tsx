@@ -55,10 +55,6 @@ const ClassesPage = () => {
   const hearderContent = () => {
     return (
       <>
-        <Heading fontWeight="400" fontSize="1rem" color="gray.200" mb="13px">
-          Olá, Léo
-        </Heading>
-
         <Flex alignItems="center" gap="14px">
           <Icon icon="MultiUser" size={25} color="#A0A0A0" />
 
