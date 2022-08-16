@@ -96,7 +96,7 @@ const AppTemplate = ({
           pt="0px !important"
           {...(isMobile && {
             marginTop: '162px',
-            paddingBottom: '42px'
+            paddingBottom: '100px'
           })}
         >
           {children}
